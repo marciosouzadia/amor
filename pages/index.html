@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,11 +37,205 @@
             compreender.</p>
     </div>
 
-    <div class="button-container">
-        <a href="index2.html" class="love-button">Ver Nossa Galeria</a>
-    </div>
+    <title>Galeria de Amor 💖</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        h1 {
+            color: #ff0000;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 2s ease;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            width: 90%;
+            max-width: 1000px;
+            animation: fadeInUp 2s ease;
+        }
+
+        .card {
+            position: relative;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transform: scale(1);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            animation: zoomIn 1.5s ease;
+            background-color: white;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* 👇 Imagens com mesmo tamanho e reflexo */
+        .card img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 15px 15px 0 0;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .card:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Reflexo tipo espelho */
+        .card::after {
+            content: "";
+            display: block;
+            height: 2px;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+            transform: scaleY(-1);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: bottom;
+            filter: blur(3px);
+            opacity: 0.3;
+        }
+
+        .caption {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            font-size: 1.2rem;
+            padding: 10px;
+            text-align: center;
+            border-radius: 0 0 15px 15px;
+            animation: fadeIn 2s ease;
+        }
+
+        .love-button {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background: linear-gradient(45deg, #ff4e78, #ff7aa2);
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(255, 100, 150, 0.4);
+            transition: all 0.3s ease;
+            position: relative;
+            margin-top: 30px;
+        }
+
+        .love-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(255, 80, 120, 0.6);
+            background: linear-gradient(45deg, #ff2e5f, #ff7aa2);
+        }
+
+        .love-button::before {
+            content: "💖";
+            position: absolute;
+            left: 10px;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.9;
+            }
+
+            50% {
+                transform: scale(1.3);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
     </head>
-    
-</body>
+
+    <body>
+        <h1>FOTOS E MOMENTOS ❤️</h1>
+
+        <div class="gallery">
+            <figure class="card"><img src="/pages/img/heart.png" alt="">
+                <figcaption class="caption">NOSSO AMOR</figcaption>
+            </figure>
+            <figure class="card"><img src="/pages/img/i.png" alt="">
+                <figcaption class="caption">MOMENTOS JUNTOS</figcaption>
+            </figure>
+            <figure class="card"><img src="/pages/img/juntos.png" alt="">
+                <figcaption class="caption">SORRISOS DE DOER A BARRIGA</figcaption>
+            </figure>
+            <figure class="card"><img src="/pages/img/love.png" alt="">
+                <figcaption class="caption">AVENTURA A DOIS</figcaption>
+            </figure>
+            <figure class="card"><img src="/pages/img/my.png" alt="">
+                <figcaption class="caption">CARINHO INFINITO</figcaption>
+            </figure>
+            <figure class="card"><img src="/pages/img/you.png" alt="">
+                <figcaption class="caption">VC E EU</figcaption>
+            </figure>
+        </div>
+
+
+
+    </body>
 
 </html>
